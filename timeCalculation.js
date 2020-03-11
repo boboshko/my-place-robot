@@ -1,4 +1,6 @@
 const schedule = require('./data/schedule');
+const { fromTheMetro } = schedule.RenaissanceAndSoftLine;
+const { fromOffice } = schedule.RenaissanceAndSoftLine;
 
 // Конвертация расписания в Timestamp
 function convertTime(inArray, timeShift) {
@@ -16,7 +18,6 @@ function getMatchTime(array, now) {
   let match = array.find(array => array >= now);
   if (match === undefined) {
     match = false;
-  //  match = 'Автобусы устали и отдыхают в депо. Я подскажу время до ближайшего после 00:00.';
   };
   return match;
 };
@@ -55,18 +56,19 @@ function getTimeObject(arrayWeekdays, arrayFriday) {
   (day === 5) ? array = arrayFriday : (day >= 6) ? 'weekends' : array = arrayWeekdays;
   let outArray = convertTime(array, timeShift);
   let result = getMatchTime(outArray, now);
-  if (result === false) {
+  if (!result) {
     return result;
   }
   else {
-    return object = {
+    let timeObject = {
       dayOfTheWeek: day,
       departureTime: timestampToHours(result, timeShift),
       beforeDeparture: timestampToMinutes(result, now),
       wordDeclension: pluralForms(timestampToMinutes(result, now), ['минуту', 'минуты', 'минут'])
     };
+    return timeObject;
   };
 };
 
-console.log(getTimeObject(schedule.RenaissanceAndSoftLine.fromTheMetro.weekdays, schedule.RenaissanceAndSoftLine.fromTheMetro.friday));
-console.log(getTimeObject(schedule.RenaissanceAndSoftLine.fromOffice.weekdays, schedule.RenaissanceAndSoftLine.fromOffice.friday));
+console.log(getTimeObject(fromTheMetro.weekdays, fromTheMetro.friday));
+console.log(getTimeObject(fromOffice.weekdays, fromOffice.friday));
