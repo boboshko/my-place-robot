@@ -48,6 +48,7 @@ function whatDayIsToday(now, timeShift) {
   return result = date.getDay();
 };
 
+// Получить объект с параметрами (если возможно)
 function getTimeObject(arrayWeekdays, arrayFriday) {
   let timeShift = 10800;
   let now = Math.floor(Date.now() / 1000 + timeShift);
