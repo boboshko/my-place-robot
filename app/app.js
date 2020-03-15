@@ -80,8 +80,8 @@ app.on('text', (ctx) => {
 });
 
 // Запуск бота с помощью Long polling
-app.launch();
+// app.launch();
 
 // Запуск бота с помощью Webhook
-// app.telegram.setWebhook(config.botWebhook)
-// app.startWebhook(config.botWebhookPath, null,  5000)
+app.telegram.setWebhook(config.aprWebhook)
+app.startWebhook(config.aprWebhookPath, null,  5000)
