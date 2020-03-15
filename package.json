@@ -1,0 +1,26 @@
+{
+  "name": "my-place-robot",
+  "version": "0.1.0",
+  "description": "Небольшой проект, который должен помочь ориентироваться в расписании автобусов.",
+  "main": "start.js",
+  "scripts": {
+    "start": "start.js",
+    "start:dev": "nodemon start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boboshko/my-place-robot.git"
+  },
+  "author": "Semeon Boboshko <semeonboboshko+github@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boboshko/my-place-robot/issues"
+  },
+  "homepage": "https://github.com/boboshko/my-place-robot#readme",
+  "dependencies": {
+    "telegraf": "^3.36.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
