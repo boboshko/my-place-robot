@@ -1,6 +1,6 @@
 module.exports = {
-  asrToken: process.env.asrToken,
-  asrWebhook: process.env.asrWebhook,
-  asrWebhookPath: process.env.asrWebhookPath,
-  asrForwardingChannel: process.env.asrForwardingChannel
+  shuttlesToken: process.env.shuttlesToken,
+  shuttlesWebhook: process.env.shuttlesWebhook,
+  shuttlesWebhookPath: process.env.shuttlesWebhookPath,
+  shuttlesForwardingChannel: process.env.shuttlesForwardingChannel
 };

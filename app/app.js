@@ -7,7 +7,7 @@ const keyboardText = require('./data/text/keyboards');
 const answers = require('./data/text/answers');
 const systemAnswers = require('./data/text/system');
 
-const app = new Telegraf(config.asrToken);
+const app = new Telegraf(config.shuttlesToken);
 app.use(session());
 
 // Обработка команды /start
@@ -52,7 +52,7 @@ app.on('text', (ctx) => {
     ctx.telegram.forwardMessage(
 
       // ID канала для отправки
-      config.asrForwardingChannel,
+      config.shuttlesForwardingChannel,
       ctx.message.chat.id,
       ctx.message.message_id
     )
@@ -83,5 +83,5 @@ app.on('text', (ctx) => {
 // app.launch();
 
 // Запуск бота с помощью Webhook
-app.telegram.setWebhook(config.asrWebhook)
-app.startWebhook(config.asrWebhookPath, null,  5001)
+app.telegram.setWebhook(config.shuttlesWebhook)
+app.startWebhook(config.shuttlesWebhookPath, null,  5001)
