@@ -1,4 +1,9 @@
+![Cover](cover.png)
+
 # Shuttles α
+
+![Version](https://img.shields.io/badge/version-0.1.1-brightgreen.svg?style=flat-square)
+[![Community Chat](https://img.shields.io/badge/Community-Chat-blueChat?style=flat-square&logo=telegram)](https://t.me/codeque)
 
 Небольшой Telegram-бот, который помогает ориентироваться в расписании локальных автобусов.
 
